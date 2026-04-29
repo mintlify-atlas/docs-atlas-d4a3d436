@@ -1,0 +1,126 @@
+---
+title: "Winter decorations: icicles, wreaths, lights & more"
+description: "Alpine Whispers includes icicles, candle wreaths, wall wreaths, garlands, fairy lights, tree baubles, a snow globe, and a star topper for festive alpine builds."
+---
+
+Alpine Whispers adds a full suite of festive decorations for building cozy alpine lodges and Christmas-themed scenes. From dripping icicles on frozen eaves to glowing garlands strung across doorways, each piece is designed to layer together into a cohesive winter aesthetic.
+
+<CardGroup cols={2}>
+  <Card title="Icicles" icon="droplet">
+    Hang from block undersides for realistic frozen rooftop detail.
+  </Card>
+  <Card title="Wreaths" icon="circle">
+    Candle Wreath (floor) and Wall Wreath (wall-mounted), both lightable with Flint and Steel.
+  </Card>
+  <Card title="Lights" icon="lightbulb">
+    Garland (light level 4) and Fairy Lights (light level 9) attach to walls and ceilings.
+  </Card>
+  <Card title="Tree decorations" icon="tree">
+    Tree Baubles placed directly on leaf blocks, and a Star Topper for the crown.
+  </Card>
+  <Card title="Novelties" icon="sparkles">
+    Snow Globe, Homespun Carpet, and more decorative touches for interiors.
+  </Card>
+</CardGroup>
+
+---
+
+## Icicles
+
+Icicles (`alpinewhispers:icicles`) hang from the underside of blocks, including leaf blocks, making them ideal for frozen rooftops, cave entrances, and overhanging ledges. The block uses `noOcclusion`, so it does not obscure the block above it.
+
+**Placement rules:**
+- Must be placed beneath a non-air block that can support a center face, or beneath any leaf block.
+- Falls if the block above is removed.
+- Emits a slow drizzle of snowflake particles while placed.
+
+**Tooltip:** Can be placed under other blocks.
+
+---
+
+## Candle Wreath & Wall Wreath
+
+### Candle Wreath
+
+The Candle Wreath (`alpinewhispers:candle_wreath`) — *Kerzenkranz* in German — sits on flat surfaces such as tables and floors. It holds four individual candles, each of which can be lit independently. Light level scales with the number of lit candles:
+
+| Candles lit | Light level |
+|-------------|-------------|
+| 0 | 0 |
+| 1 | 4 |
+| 2 | 8 |
+| 3 | 12 |
+| 4 | 15 |
+
+Use **Flint and Steel** or a **Fire Charge** to light each candle by clicking on it. Douse individual candles with a **Water Bucket**, or waterlog the block to extinguish all four at once. Flaming projectiles can also ignite individual candles on contact.
+
+**Tooltip:** Can be placed.
+
+### Wall Wreath
+
+The Wall Wreath (`alpinewhispers:wall_wreath`) — *Wandkranz* — mounts flush against a wall surface. It shares the same attachment logic as Fairy Lights and can be placed against any non-air wall block or hung from a ceiling.
+
+**Tooltip:** Can be placed on walls.
+
+---
+
+## Garland
+
+The Garland (`alpinewhispers:garland`) — *Girlande* — is a line-connecting decorative block that emits **light level 4** with emissive rendering. Place it against walls or hang it from ceilings to drape across doorways and mantlepieces. Adjacent garland blocks facing the same direction automatically connect into straight runs or corner pieces (`straight`, `inner_left`, `inner_right`, `outer_left`, `outer_right`).
+
+**Placement:** Attaches to any non-air wall block or ceiling block.
+
+**Tooltip:** Can be placed on walls.
+
+---
+
+## Fairy Lights
+
+Fairy Lights (`alpinewhispers:fairy_lights`) — *Lichterkette* — are a brighter wall-mounted string light that emit **light level 9** with emissive rendering. Like garlands they hang against walls or from ceilings, but offer nearly double the light output, making them well-suited to illuminating larger interior spaces without torches.
+
+**Placement:** Attaches to any non-air wall block or ceiling block.
+
+**Tooltip:** Can be placed on walls.
+
+<Note>
+Fairy Lights (level 9) and Garland or Tree Baubles (level 4) can fully illuminate cozy builds. There is no need to place torches or lanterns inside a well-decorated alpine lodge.
+</Note>
+
+---
+
+## Tree Baubles
+
+Tree Baubles (`alpinewhispers:tree_baubles`) are placed directly onto leaf blocks using the **Tree Baubles item**, which replaces the leaf block visually while keeping a reference to the original leaf state beneath. The block emits **light level 4** with emissive rendering.
+
+**Interaction:**
+- **Right-click** a leaf block while holding Tree Baubles to place them.
+- **Shift + right-click** a placed Tree Baubles block to remove it and recover the item.
+- Using **Shears** on the block also removes it.
+
+**Tooltip:** Right-click to place on leaves. Shift-right-click to remove.
+
+<Tip>
+Combine Tree Baubles, Garland, and a Star Topper on an Arolla Pine tree for a complete Christmas tree look.
+</Tip>
+
+---
+
+## Star Topper
+
+The Star Topper (`alpinewhispers:star_topper`) — *Sternspitze* — is a glowing star-shaped block intended for the crown of a decorated tree or tall structure. It uses Glowstone properties and emits **light level 14**. While placed it continuously spawns End Rod particles in a halo above the star.
+
+**Tooltip:** Can be placed.
+
+---
+
+## Snow Globe
+
+The Snow Globe (`alpinewhispers:snow_globe`) — *Schneekugel* — is a compact decorative block modelled after the classic glass ornament. It shares Glass block properties. Right-clicking the globe shakes it, increasing an internal power value (up to 15) and triggering a shower of snowflake particles inside the glass. The power level decays gradually over time and also doubles as a weak redstone signal source while active.
+
+**Tooltip:** Can be placed.
+
+---
+
+## Homespun Carpet
+
+Homespun Carpet (`alpinewhispers:homespun_carpet`) — *Handgewebter Teppich* — is a standard carpet-type block crafted from Homespun Wool (`alpinewhispers:homespun_wool`). Homespun Wool is dropped by shearing an Alpine Sheep. Place the carpet on floors for a hand-woven, rustic interior finish.

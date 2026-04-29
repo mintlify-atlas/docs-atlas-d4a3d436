@@ -1,0 +1,137 @@
+---
+title: "Functional blocks: smoker, bathtub, sink & fireplace"
+description: "Interactive blocks in Alpine Whispers: the Arolla Pine Smoke Oven, Bathtub, Sink, Wardrobe, Fireplace Cornice, and Privy — each with distinct mechanics."
+---
+
+Alpine Whispers extends Minecraft's vanilla utility blocks with a set of themed functional blocks tuned to the Alpine setting. These range from cooking appliances and water fixtures to storage furniture and a decorative fireplace surround — each with distinct right-click interactions and mechanics described below.
+
+<AccordionGroup>
+
+  <Accordion title="Arolla Pine Smoke Oven" icon="fire">
+    The Arolla Pine Smoke Oven extends the vanilla `SmokerBlock` directly, so it behaves identically to a Smoker in every respect:
+
+    - Cooks food items **twice as fast** as a standard Furnace.
+    - Accepts the same fuel items as a Furnace or Smoker.
+    - Right-click to open the cooking interface (one input slot, one fuel slot, one output slot).
+    - Emits light and smoke particles when active.
+    - Crafted from Arolla Pine materials.
+
+    <Note>
+    Use the Smoke Oven to cook **Raw Reindeer** (dropped by Reindeer mobs) into Cooked Reindeer. Cooked Reindeer restores the same hunger as Cooked Mutton and is also used in the Cooked Reindeer Dish recipe.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Bathtub" icon="bath">
+    The Arolla Pine Bathtub is a large decorative block with live fluid rendering and several interactive mechanics.
+
+    **Placement** — occupies two blocks horizontally (head and foot), similar to a bed. Place on any flat surface facing any cardinal direction.
+
+    **Filling the tub:**
+    - Right-click with an **empty hand**, a **Water Bucket**, or a **Glass Bottle** on the head block to start filling. The fill animation takes approximately **45 seconds** (900 ticks) to complete. In Survival, the bucket or bottle is returned empty immediately on use.
+
+    **Draining the tub:**
+    - Right-click with an empty **Bucket** to drain 50% of the water and receive a Water Bucket.
+    - Right-click with a **Glass Bottle** to drain 25% and receive a Water Potion.
+
+    **Entity interactions while filled:**
+    - **Endermen** take drowning damage inside a filled tub.
+    - **Zombies** convert into **Drowned** when standing in a filled tub.
+    - **Living entities** have all active harmful potion effects removed on contact with the water.
+    - Movement is slowed (momentum reduced to 60% horizontally) inside a filled tub.
+
+    <Tip>
+    Combine the Bathtub with a Sink and a Washbasin in an adjacent layout for a complete bathroom corner. The three blocks share a consistent stone/wood aesthetic and complement each other visually.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Sink & Washbasin" icon="droplet">
+    Both the Sink and the Washbasin share the same `SinkBlock` implementation and identical interactions. They differ only in material appearance and hitbox:
+
+    - **Sink** — stone brick-style, no decorative legs (`hasLegs = false`).
+    - **Washbasin** — Arolla Pine wood-style with four decorative legs (`hasLegs = true`).
+
+    Both blocks are two blocks tall (lower body + upper faucet) and must be placed where there is a free block above.
+
+    **Filling:**
+    - Right-click with an **empty hand**, a **Water Bucket**, or a **Glass Bottle** on the lower block to fill. Splash particles are emitted on the server. In Survival, the bucket/bottle is returned empty.
+
+    **Draining:**
+    - Right-click the filled lower block with an empty **Bucket** to drain and receive a **Water Bucket**.
+    - Right-click with a **Glass Bottle** to drain and receive a **Water Potion**.
+
+    Dripping water particles animate from the faucet position when the block is in the world.
+
+    Hold **[SHIFT]** while hovering over the item to read the in-game tooltip:
+    > _Right-click to fill with water. If filled, use a bucket to drain._
+  </Accordion>
+
+  <Accordion title="Wardrobe" icon="shirt">
+    The Arolla Pine Wardrobe is a tall two-block-high armour storage unit.
+
+    **Placement** — occupies two block heights (lower and upper half). Cannot be placed if the block above is obstructed.
+
+    **Opening and closing:**
+    - Right-click with an **empty hand** on either half to toggle open/closed (plays wooden door open/close sounds).
+
+    **Storing armour:**
+    - Right-click while holding an **armour item** to place it into its dedicated slot (helmet, chestplate, leggings, or boots). Any previously stored piece in that slot is swapped back into your hand.
+
+    **Retrieving armour:**
+    - **Shift-right-click** with an empty hand to remove and receive the first non-empty armour piece stored.
+
+    **Breaking the wardrobe** — all stored armour pieces are dropped at the block position.
+
+    Hold **[SHIFT]** in the item tooltip to read:
+    > _Right-click to open or close. Used to store armour._
+  </Accordion>
+
+  <Accordion title="Fireplace Cornice" icon="flame">
+    The Fireplace Cornice is a decorative fireplace surround that accepts a full solid block placed inside it, rendering that block's texture within the frame — ideal for a campfire, lit furnace, or any full-cube decorative block.
+
+    **Connecting** — adjacent Fireplace Cornice blocks facing the same direction connect automatically, hiding shared edges. This lets you build a full fireplace surround from multiple pieces.
+
+    **Inserting a block:**
+    - Right-click the Cornice while holding any **full solid block item** (must have a full cube shape and no block entity). The block's appearance is applied to the interior of the Cornice frame (`APPLIED` state = true).
+
+    **Removing the inserted block:**
+    - Right-click the Cornice with a **Pickaxe** to extract the inserted block. The block item is dropped at the Cornice's position and the `APPLIED` state resets to false.
+
+    **Breaking the Cornice** — if broken in Survival while a block is applied, the inserted block item is dropped separately.
+
+    The Cornice supports waterlogging.
+
+    Hold **[SHIFT]** in the item tooltip to read:
+    > _Can be filled with full blocks._
+    > _Right-click with a pickaxe to remove the inserted block._
+
+    <Warning>
+    Early releases of Alpine Whispers (versions 1.0.0 and 1.0.1) contained a compatibility crash when the Fireplace Cornice was rendered alongside **Indium** (the Sodium rendering compatibility layer). This was resolved in **version 1.0.2**. If you are using Sodium or Indium, ensure Alpine Whispers is updated to 1.0.2 or later.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Privy" icon="house">
+    The Privy is an outhouse-style compost block that converts surplus food into useful drops.
+
+    **Using the Privy:**
+    - Right-click while holding any **food item** to deposit it. The Privy processes it into **Rotten Flesh**, with a small chance of producing **Bone Meal**. Rotten Flesh and Bone Meal themselves cannot be fed in.
+    - **Shift-right-click** with an empty hand to release all stored contents as dropped items.
+
+    The Privy also emits a Redstone comparator signal proportional to how much material it has stored internally.
+
+    This provides a way to recycle excess food items, particularly useful in farms or when your inventory is full of low-value foods.
+
+    Hold **[SHIFT]** in the item tooltip to read:
+    > _Right-click with excess food items to grind into rotten flesh. Small chance of Bone Meal._
+  </Accordion>
+
+  <Accordion title="Cabinet & Cooking Aisle" icon="box">
+    **Cabinet** — a standard storage block with a full-block hitbox. Right-click to open the inventory screen. Uses wooden trapdoor open and close sounds. Supports custom naming via an Anvil. Emits a Redstone comparator signal proportional to how full the inventory is.
+
+    **Wall Cabinet** — a slim-profile variant (`thin = true`) designed to mount against a wall. Shares the same inventory and sound behaviour as the Cabinet but extends only half a block in depth.
+
+    **Cooking Aisle** — a `ConnectibleCabinet` that joins seamlessly to adjacent Cooking Aisle blocks facing the same direction, forming a continuous kitchen counter surface. Right-click to open storage. Useful for building a coherent kitchen layout alongside the Smoke Oven and Sink.
+
+    All three blocks drop their contents when broken.
+  </Accordion>
+
+</AccordionGroup>

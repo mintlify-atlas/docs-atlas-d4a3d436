@@ -1,0 +1,81 @@
+---
+title: "Alpine Sheep: shearable, rideable highland wool producers"
+description: "Alpine Sheep yield Homespun Wool when sheared, can be ridden using Bread on a Stick, and react dangerously to being fed bread in Alpine Whispers."
+---
+
+Alpine Sheep are the quirky highland mob of Alpine Whispers. They graze across frost-covered terrain, yield a distinctive decorative wool when sheared, and can be ridden across the slopes using a custom item. They also have an unusual — and risky — reaction to being fed bread, making them one of the more mechanically interesting mobs in the mod.
+
+## Spawning
+
+Alpine Sheep spawn in snowy biomes alongside other alpine wildlife. They graze naturally on **Hoarfrost Grass**, **Frozen Dirt**, and **Snow Blocks**, and can be found roaming open highland terrain.
+
+## Shearing
+
+Use **Shears** on an adult, unsheared Alpine Sheep to harvest **1–3 Homespun Wool**. The sheep must be alive, fully grown, and not already sheared for shearing to succeed.
+
+After shearing, the sheep enters a sheared state (`Sheared = true`). Wool regrows when the sheep eats — once it grazes on a valid block, the sheared flag is cleared and it becomes ready to shear again.
+
+## Riding
+
+Right-click an adult Alpine Sheep (without sneaking) to mount it. However, the sheep will only respond to steering controls if the rider is **holding Bread on a Stick** in either hand. Without it, the sheep ignores movement input entirely.
+
+**Boosting** is triggered by right-clicking while already riding and holding Bread on a Stick. This consumes one use of durability from the Bread on a Stick and gives the sheep a speed burst for **80 ticks** (~4 seconds) at **1.5× its base movement speed**.
+
+| Boost parameter | Value |
+|-----------------|-------|
+| Boost duration | 80 ticks (~4 s) |
+| Speed multiplier | 1.5× |
+| Bread on a Stick durability | 25 uses |
+
+## The bread effect
+
+<Warning>
+Feeding an Alpine Sheep a piece of Bread triggers a delayed negative effect. After approximately **10 seconds** (200 ticks), the sheep displays angry particles. After approximately **15 seconds** (300 ticks), it takes **2 damage** and the effect ends. Bread cannot be fed again for **80 ticks** after the effect is triggered, whether or not it is still active.
+</Warning>
+
+Feeding bread to an Alpine Sheep activates a timed sequence:
+
+1. The sheep consumes the bread immediately with an eating sound.
+2. After **200 ticks**, angry villager particles appear around the sheep.
+3. After **300 ticks**, the sheep takes **2 points of damage**, the effect ends, and the internal timer resets.
+
+This behaviour has a cooldown of **80 ticks** — you cannot trigger it again until the cooldown expires. The effect is cosmetic and mechanical, but does not kill the sheep outright under normal health.
+
+## Grazing
+
+Alpine Sheep use a custom `AlpineSheepEatBlockGoal` to graze periodically. The goal triggers at random intervals (roughly 1 in 1000 ticks for adults, 1 in 50 for babies). The sheep will eat from the following sources:
+
+**Foliage (destroyed on eat, if mob griefing is enabled):**
+- Hoarfrost Grass
+- Tall Hoarfrost Grass
+- Short Grass
+
+**Terrain (grazes without destroying, except Grass Block → Dirt):**
+- Grass Block
+- Snow (layer)
+- Snow Block
+- Powder Snow
+- Frozen Dirt
+
+When the sheep successfully eats, `ate()` is called — this resets the sheared state, triggering wool regrowth.
+
+## Wool & crafting
+
+Shearing an Alpine Sheep yields **Homespun Wool**, a decorative block with a unique natural texture suited to alpine cottage builds. Homespun Wool can be crafted into **Homespun Carpet**, a flat variant for flooring and detailing.
+
+Both blocks share the same aesthetic and work well as rustic alternatives to standard dyed wool in builds themed around highland or winter settings.
+
+## Attributes
+
+| Attribute | Value |
+|-----------|-------|
+| Max Health | 14 HP |
+| Movement Speed | 0.23 |
+
+## Breeding
+
+Alpine Sheep breed with **Wheat**. Feed two adults Wheat to put them into love mode. The resulting lamb grows into a full adult over time following standard Minecraft baby growth mechanics.
+
+<Tip>
+Keep a small pen of Alpine Sheep and breed them regularly for a steady supply of Homespun Wool and Homespun Carpet without needing to explore for new sheep.
+</Tip>

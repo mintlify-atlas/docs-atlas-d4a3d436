@@ -1,126 +1,85 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Alpine Whispers",
+  "theme": "almond",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#e0b45f",
+    "light": "#89540f",
+    "dark": "#e6dbc4"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "https://media.brand.dev/a39434d1-a5e1-487f-9403-0b3764111d82.png",
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/Let-s-Do-Collection/AlpineWhispers"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/Let-s-Do-Collection/AlpineWhispers"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Guide",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introduction",
+              "installation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Wildlife",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "wildlife/reindeer",
+              "wildlife/alpine-sheep"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Blocks & Building",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
+              "blocks/arolla-pine",
+              "blocks/alpine-gneiss",
+              "blocks/functional-blocks"
             ]
           },
           {
-            "group": "Agent ready",
+            "group": "Decorations & Items",
             "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "decorations/winter-decor",
+              "decorations/food-and-items"
+            ]
+          },
+          {
+            "group": "World & Biomes",
+            "pages": [
+              "world/biomes",
+              "world/advancements"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Configuration",
             "pages": [
-              "api-reference/introduction"
+              "reference/configuration",
+              "reference/compatibility"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Changelog",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "reference/changelog"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

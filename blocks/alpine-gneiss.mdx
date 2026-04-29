@@ -1,0 +1,73 @@
+---
+title: "Alpine Gneiss stone: variants, frost coverage & crafting"
+description: "Alpine Gneiss is a new stone type in Alpine Whispers with layered, mossy, and frost-covered variants, available as blocks, stairs, slabs, and walls."
+---
+
+Alpine Gneiss is inspired by the metamorphic rock common throughout the European Alps — characterised by its banded, foliated texture formed under intense heat and pressure. In Alpine Whispers it functions as a craftable stone type suited to rugged mountain architecture. All Alpine Gneiss blocks share the hardness and blast resistance of Cobbled Deepslate.
+
+<Note>
+All Alpine Gneiss blocks copy their properties directly from `Blocks.COBBLED_DEEPSLATE`. This means they match Cobbled Deepslate in mining speed requirement (needs a pickaxe), hardness, and blast resistance.
+</Note>
+
+## Base variants
+
+| Block | Notes |
+|-------|-------|
+| Alpine Gneiss | Base rough-hewn block |
+| Alpine Gneiss Stairs | — |
+| Alpine Gneiss Slab | — |
+| Alpine Gneiss Wall | — |
+| Alpine Gneiss Bricks | Polished, mortared variant |
+| Alpine Gneiss Brick Stairs | — |
+| Alpine Gneiss Brick Slab | — |
+| Alpine Gneiss Brick Wall | — |
+| Layered Alpine Gneiss Bricks | Horizontal layering texture; emphasises the natural strata of gneiss |
+| Layered Alpine Gneiss Brick Stairs | — |
+| Layered Alpine Gneiss Brick Slab | — |
+| Layered Alpine Gneiss Brick Wall | — |
+
+## Frost-covered variants (Frosty blocks)
+
+The Mossy and Mossy Layered brick groups implement the **Frosty block** mechanic. Each block tracks an internal `frosty` boolean state that overlays a snow/frost texture on top of the base mossy appearance.
+
+**To add frost:** Right-click the block with a **Snowball**. Snowballs thrown as projectiles also trigger the effect. Snow particles burst from the block on contact.
+
+**To remove frost:** Right-click the frosty block with a **Brush**.
+
+Hold **[SHIFT]** while hovering over a frosty block in your inventory to read the tooltip reminder.
+
+### Mossy Alpine Gneiss Bricks
+
+A weathered, moss-covered polish brick group. Supports the frosty overlay.
+
+| Block | —  |
+|-------|----|
+| Mossy Alpine Gneiss Bricks | Base block |
+| Mossy Alpine Gneiss Brick Stairs | — |
+| Mossy Alpine Gneiss Brick Slab | — |
+| Mossy Alpine Gneiss Brick Wall | — |
+
+### Mossy Layered Alpine Gneiss Bricks
+
+Combines the horizontal layering texture with moss and frost support.
+
+| Block | — |
+|-------|---|
+| Mossy Layered Alpine Gneiss Bricks | Base block |
+| Mossy Layered Alpine Gneiss Brick Stairs | — |
+| Mossy Layered Alpine Gneiss Brick Slab | — |
+| Mossy Layered Alpine Gneiss Brick Wall | — |
+
+<Tip>
+Mix base Alpine Gneiss Bricks with Mossy and Mossy Layered variants in the same wall to achieve a naturally weathered, realistic look — as though sections of the stonework have aged at different rates. Pair with Icicle blocks for a frozen mountain-pass aesthetic.
+</Tip>
+
+## Build ideas
+
+Alpine Gneiss is well suited to builds that call for heavy, aged stonework:
+
+**Castle walls and fortresses** — the large brick format and neutral grey-green tone read as imposing defensive masonry. Stack Gneiss Brick Walls with corner pillars of base Gneiss Bricks for a fortified silhouette.
+
+**Mountain fortresses and watchtowers** — the layered variant's horizontal banding echoes the natural rock faces visible in alpine cliff sides, making it a strong choice for structures carved into or built against a mountain.
+
+**Alpine chalets with stone foundations** — combine Arolla Pine wood upper storeys with an Alpine Gneiss ground floor for a traditional Alpine house profile. Mossy variants work well as partially buried cellar or basement walls, suggesting long exposure to damp ground.

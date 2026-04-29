@@ -1,0 +1,80 @@
+---
+title: "Food, armor & music: Alpine Whispers items guide"
+description: "Alpine Whispers adds Reindeer meat, a Cooked Reindeer Dish, the rare Winter Hat helmet, Bread on a Stick for riding sheep, and the Winter Magic music disc."
+---
+
+Beyond its decorative blocks, Alpine Whispers introduces several non-block items that fit naturally into alpine survival: two tiers of reindeer meat, a hearty multi-bite dish, a helmet with genuine warmth, a tool for guiding your Alpine Sheep mount, and a jukebox disc to set the mood.
+
+---
+
+## Food items
+
+### Reindeer (raw)
+
+Raw Reindeer (`alpinewhispers:reindeer`) — *Rohes Rentier* — is dropped by Reindeer mobs when killed without fire. It has the same food value as raw Mutton: **2 nutrition, 1.8 saturation**. Cook it in any furnace, smoker, or the Arolla Pine Smoke Oven to upgrade it.
+
+### Cooked Reindeer
+
+Cooked Reindeer (`alpinewhispers:cooked_reindeer`) — *Gebratenes Rentier* — is obtained by cooking Raw Reindeer in a furnace or smoker, or as a direct drop when a Reindeer is killed by fire. It matches the food value of Cooked Mutton: **6 nutrition, 9.6 saturation**.
+
+### Cooked Reindeer Dish
+
+The Cooked Reindeer Dish (`alpinewhispers:cooked_reindeer_dish`) — *Rentiergericht* — is a placeable food block modelled after Cake. Place it on a surface and right-click to eat one bite at a time; the block provides **4 bites** before it is consumed. Each bite restores **8 nutrition** with a **0.9 saturation modifier**, matching the Golden Carrot.
+
+| Property | Value |
+|----------|-------|
+| Bites | 4 |
+| Nutrition per bite | 8 |
+| Saturation modifier | 0.9 |
+| Equivalent to | Golden Carrot |
+
+<Tip>
+The Cooked Reindeer Dish offers the highest saturation per bite of any food in the mod. Pack one before setting out on a long mountain expedition.
+</Tip>
+
+---
+
+## Equipment
+
+### Winter Hat
+
+The Winter Hat (`alpinewhispers:winter_hat`) — *Wintermütze* — is a helmet-slot armor piece of **Rare** rarity. It is built from the `ArmorMaterialRegistry.WINTER_HAT` material and renders with a custom model texture (`textures/models/armor/winter_hat_layer_1.png`). It equips into the head slot like any other helmet and provides the cozy visual flair expected from a hand-knitted alpine cap.
+
+| Property | Value |
+|----------|-------|
+| Slot | Helmet |
+| Rarity | Rare |
+| Armor points | 1 |
+| Toughness | 0 |
+| Knockback resistance | 0 |
+| Enchantability | 0 |
+| Repair ingredient | Wool |
+| Armor material | `WINTER_HAT` |
+
+### Bread on a Stick
+
+Bread on a Stick (`alpinewhispers:bread_on_a_stick`) is a rideable-animal control item with **25 durability**. To steer an Alpine Sheep you must be holding it in your main hand — the sheep's `getControllingPassenger` check requires the rider to hold this item. While mounted, right-clicking boosts the sheep's movement speed to **1.5× base speed** for **80 ticks** (4 seconds). Each boost consumes 1 durability. When the item breaks it is replaced by a plain Fishing Rod.
+
+| Property | Value |
+|----------|-------|
+| Durability | 25 |
+| Boost duration | 80 ticks (4 seconds) |
+| Speed multiplier | ×1.5 |
+
+<Warning>
+Each right-click boost depletes one durability charge. On a long ride Bread on a Stick can break mid-journey, leaving you unable to control the sheep. Carry spares.
+</Warning>
+
+---
+
+## Music
+
+### Winter Magic music disc
+
+The Winter Magic music disc (`alpinewhispers:winter_magic_music_disc`) plays the jukebox song `jukebox_song.alpinewhispers.winter_magic`. According to the German locale entry it is titled **"Marcos Lieblingslied – Winterzauber"** (Marco's favourite song – Winter Magic). The item does not stack (`stacksTo(1)`). Insert it into any Jukebox to play it; the subtitle shown while playing is *Winterzauber spielt*.
+
+The source code does not define a specific mob drop for this disc; check the mod's loot tables or configuration for current drop sources.
+
+<Tip>
+Place a Jukebox near the fireplace of your Alpine lodge and load it with Winter Magic for the perfect winter ambiance.
+</Tip>

@@ -1,0 +1,79 @@
+---
+title: "Install Alpine Whispers on Fabric or NeoForge"
+description: "Step-by-step guide to installing Alpine Whispers and Architectury API on Fabric or NeoForge for Minecraft 1.21.1, with manual and mod-manager options."
+---
+
+Alpine Whispers is available for both Fabric and NeoForge on Minecraft 1.21.1. Follow the steps below for your mod loader. The process is the same whether you install manually or use a mod manager.
+
+<Tip>
+  Using a mod manager such as [Modrinth App](https://modrinth.com/app) or CurseForge Launcher makes dependency management easier — Architectury API can be installed automatically alongside Alpine Whispers.
+</Tip>
+
+## Prerequisites
+
+Before installing, make sure you have:
+
+- Minecraft 1.21.1
+- **Fabric Loader 0.17.2+** or **NeoForge 21.1.211+** (depending on your platform)
+- **Architectury API 13.0.8+** (required on both platforms)
+
+## Installation steps
+
+<Tabs>
+  <Tab title="Fabric">
+    <Steps>
+      <Step title="Install Fabric Loader 0.17.2+">
+        Download and run the Fabric installer from [fabricmc.net](https://fabricmc.net/use/installer/). Select Minecraft version **1.21.1** and loader version **0.17.2** or newer.
+      </Step>
+      <Step title="Install Fabric API 0.116.6+1.21.1">
+        Download Fabric API version `0.116.6+1.21.1` or newer from [Modrinth](https://modrinth.com/mod/fabric-api) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) and place the `.jar` in your `mods/` folder.
+      </Step>
+      <Step title="Install Architectury API for Fabric">
+        Download Architectury API 13.0.8+ (Fabric build) from [Modrinth](https://modrinth.com/mod/architectury-api) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/architectury-api) and place the `.jar` in your `mods/` folder.
+      </Step>
+      <Step title="Download the Alpine Whispers Fabric jar">
+        Download the latest `letsdo-alpinewhispers-fabric-<version>.jar` from [Modrinth](https://modrinth.com/mod/lets-do-alpine-whispers) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/lets-do-alpine-whispers).
+      </Step>
+      <Step title="Place all jars in the mods/ folder">
+        Copy `letsdo-alpinewhispers-fabric-<version>.jar`, `fabric-api-<version>.jar`, and `architectury-fabric-<version>.jar` into your `.minecraft/mods/` folder.
+      </Step>
+      <Step title="Launch Minecraft">
+        Open the Minecraft Launcher, select the **Fabric** profile for version **1.21.1**, and click **Play**.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="NeoForge">
+    <Steps>
+      <Step title="Install NeoForge 21.1.211+">
+        Download the NeoForge installer for version **21.1.211** or newer from [neoforged.net](https://neoforged.net/) and run it against your Minecraft 1.21.1 installation.
+      </Step>
+      <Step title="Install Architectury API for NeoForge">
+        Download Architectury API 13.0.8+ (NeoForge build) from [Modrinth](https://modrinth.com/mod/architectury-api) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/architectury-api) and place the `.jar` in your `mods/` folder.
+      </Step>
+      <Step title="Download the Alpine Whispers NeoForge jar">
+        Download the latest `letsdo-alpinewhispers-neoforge-<version>.jar` from [Modrinth](https://modrinth.com/mod/lets-do-alpine-whispers) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/lets-do-alpine-whispers).
+      </Step>
+      <Step title="Place all jars in the mods/ folder">
+        Copy `letsdo-alpinewhispers-neoforge-<version>.jar` and `architectury-neoforge-<version>.jar` into your `.minecraft/mods/` folder.
+      </Step>
+      <Step title="Launch Minecraft">
+        Open the Minecraft Launcher, select the **NeoForge** profile for version **1.21.1**, and click **Play**.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Warning>
+  Architectury API is a required dependency. If it is missing from your `mods/` folder, the game will crash on startup with a missing dependency error.
+</Warning>
+
+## Download links
+
+<CardGroup cols={2}>
+  <Card title="Modrinth" icon="brands modrinth" href="https://modrinth.com/mod/lets-do-alpine-whispers">
+    Download Alpine Whispers from Modrinth. Includes both Fabric and NeoForge builds.
+  </Card>
+  <Card title="CurseForge" icon="fire" href="https://www.curseforge.com/minecraft/mc-mods/lets-do-alpine-whispers">
+    Download Alpine Whispers from CurseForge. Includes both Fabric and NeoForge builds.
+  </Card>
+</CardGroup>

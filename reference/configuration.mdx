@@ -1,0 +1,69 @@
+---
+title: "Configuration: fog toggle and mod options"
+description: "Alpine Whispers provides a config file for Fabric and NeoForge that lets you disable the fog effect in snowy biomes. Here's how to configure it."
+---
+
+Alpine Whispers generates a config file on first launch. The main configurable option (added in 1.0.1) is the ability to control the fog overlay rendered in snowy biomes — you can disable it entirely or adjust its intensity.
+
+## Config file location
+
+The config file is written to your instance's `config/` directory when the game first loads the mod.
+
+| Loader | File |
+|--------|------|
+| Fabric | `config/alpinewhispers.client.json` |
+| NeoForge | `config/alpinewhispers-client.toml` |
+
+## Available options
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `snowFogEnabled` | boolean | `true` | Controls whether the fog rendering effect is active in snowy biomes (Grove, Snowy Plains, etc.). Set to `false` to disable it. Added in version 1.0.1. |
+| `snowFogStrength` | double | `1.0` | Adjusts the intensity of the snow fog effect. Accepted range is `0.0` to `2.0`. Only applies when `snowFogEnabled` is `true`. |
+
+## Editing the config
+
+<Tabs>
+  <Tab title="Fabric">
+    Edit `config/alpinewhispers.client.json` in your instance directory:
+
+    ```json
+    {
+      "snowFogEnabled": true,
+      "snowFogStrength": 1.0
+    }
+    ```
+
+    To disable the fog overlay, set `snowFogEnabled` to `false`:
+
+    ```json
+    {
+      "snowFogEnabled": false,
+      "snowFogStrength": 1.0
+    }
+    ```
+  </Tab>
+  <Tab title="NeoForge">
+    Edit `config/alpinewhispers-client.toml` in your instance directory:
+
+    ```toml
+    snowFogEnabled = true
+    snowFogStrength = 1.0
+    ```
+
+    To disable the fog overlay, set `snowFogEnabled` to `false`:
+
+    ```toml
+    snowFogEnabled = false
+    snowFogStrength = 1.0
+    ```
+  </Tab>
+</Tabs>
+
+<Note>
+  Changes to the config file take effect after restarting Minecraft.
+</Note>
+
+<Tip>
+  Players who experience performance issues in snowy biomes may want to disable snow fog by setting `snowFogEnabled` to `false`.
+</Tip>

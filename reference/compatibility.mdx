@@ -1,0 +1,45 @@
+---
+title: "Compatibility: supported versions and known issues"
+description: "Alpine Whispers runs on Minecraft 1.21.1 with Fabric 0.17.2+ or NeoForge 21.1.211+. Covers Sodium/Indium fixes and the Let's Do collection."
+---
+
+Alpine Whispers supports Minecraft 1.21.1 on both Fabric and NeoForge. The mod has one required dependency (Architectury API) and is otherwise designed to work alongside other mods with minimal conflicts.
+
+## Supported versions
+
+| Component | Version |
+|-----------|---------|
+| Minecraft | 1.21.1 |
+| Fabric Loader | 0.17.2+ |
+| Fabric API | 0.116.6+1.21.1 |
+| NeoForge | 21.1.211+ |
+| Architectury API | 13.0.8+ |
+| Alpine Whispers | 1.0.2 |
+
+## Required dependencies
+
+Architectury API is the only hard dependency. It must be installed alongside Alpine Whispers on both Fabric and NeoForge.
+
+- **Modrinth:** [https://modrinth.com/mod/architectury-api](https://modrinth.com/mod/architectury-api)
+
+## Known compatibility fixes
+
+<Warning>
+  If you are using Sodium or Indium, ensure you are on Alpine Whispers **1.0.2 or later**. Earlier versions contain a crash bug triggered when placing the Fireplace Cornice block with those mods installed.
+</Warning>
+
+| Version | Fix |
+|---------|-----|
+| 1.0.2 | Fixed a crash when placing the Fireplace Cornice with Indium / Sodium installed |
+| 1.0.1 | Fixed a client-side crash when rendering the Fireplace Cornice |
+
+## The Let's Do Collection
+
+Alpine Whispers is part of the [Let's Do mod collection](https://lets-do.ch/mods/). All mods in the collection share the `net.satisfy` maven group and are designed to complement each other, but there are no cross-mod hard dependencies — every mod in the collection works standalone or alongside the others.
+
+Join the community on Discord: [https://discord.gg/Jb2bgpYr](https://discord.gg/Jb2bgpYr)
+
+## Reporting issues
+
+- **GitHub Issues:** [https://github.com/Let-s-Do-Collection/AlpineWhispers/issues](https://github.com/Let-s-Do-Collection/AlpineWhispers/issues)
+- **Discord:** [https://discord.gg/Jb2bgpYr](https://discord.gg/Jb2bgpYr)

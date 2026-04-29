@@ -1,0 +1,62 @@
+---
+title: "Advancements: Alpine Whispers progression guide"
+description: "Alpine Whispers adds nine advancements tracking your journey from finding a Grove biome to cooking a Reindeer Dish and decorating with candle wreaths."
+---
+
+Alpine Whispers includes a dedicated advancement tree of nine entries that guides you through the mod's core content — from first entering a Grove biome to crafting a meal and lighting holiday decorations. The tree is rooted at a single anchor advancement and branches into parallel paths covering exploration, cooking, animals, and decoration.
+
+<Note>The root advancement serves as the tree anchor and unlocks automatically when any inventory change occurs — effectively as soon as you start playing. It does not show a toast or chat announcement.</Note>
+
+## Advancement table
+
+| Advancement | How to unlock |
+|-------------|---------------|
+| **Alpine Whispers** (root) | Triggered by any inventory change — unlocks automatically on first interaction with the game |
+| **Find a Grove** | Enter a Grove biome (`minecraft:grove`) |
+| **Arolla Pine Log** | Pick up an Arolla Pine Log (`alpinewhispers:arolla_pine_log`) |
+| **Arolla Pine Smoker** | Place an Arolla Pine Smoker (`alpinewhispers:arolla_pine_smoker`) |
+| **Cooked Reindeer Dish** | Have a Cooked Reindeer Dish (`alpinewhispers:cooked_reindeer_dish`) in your inventory |
+| **Feed an Alpine Sheep** | Interact with an Alpine Sheep (`alpinewhispers:alpine_sheep`) while holding Bread |
+| **Shear an Alpine Sheep** | Interact with an Alpine Sheep while holding Shears |
+| **Spyglass at Reindeer** | Use a Spyglass (`minecraft:spyglass`) while looking directly at a Reindeer (`alpinewhispers:reindeer`) |
+| **Light the Candle Wreath** | Use Flint and Steel on a Candle Wreath block (`alpinewhispers:candle_wreath`) |
+
+## Guided walkthrough
+
+The tree has two main branches after finding a Grove — one focused on the Arolla Pine wood set and decoration, and one following the animals. The steps below trace the natural order of progression.
+
+<Steps>
+  <Step title="Find a Grove biome">
+    Travel into a Grove biome. The advancement triggers automatically from the location check once you are standing inside the biome boundary. The Snow Gentian flower icon on the toast is your visual confirmation.
+  </Step>
+
+  <Step title="Get an Arolla Pine Log">
+    Chop down an Arolla Pine tree. Pick up an **Arolla Pine Log** — the advancement fires on the inventory change. This unlocks the wood-set branch of the tree.
+  </Step>
+
+  <Step title="Place an Arolla Pine Smoker">
+    Craft an **Arolla Pine Smoker** from Arolla Pine materials and place it in the world. The trigger fires on the `placed_block` event. This is a goal-frame advancement, marking a meaningful crafting milestone.
+  </Step>
+
+  <Step title="Light a Candle Wreath with Flint and Steel">
+    Craft or find a **Candle Wreath** and place it. Then use **Flint and Steel** on it. The advancement tracks the `item_used_on_block` event against the candle wreath. This is the final step of the decoration branch and a parent of the Cooked Reindeer Dish advancement.
+  </Step>
+
+  <Step title="Look at a Reindeer through a Spyglass">
+    Equip a **Spyglass** and aim it at a **Reindeer** until the `using_item` trigger fires with the reindeer in view. The spyglass advancement is a parent of the cooking step, so complete it before trying to cook.
+  </Step>
+
+  <Step title="Cook a Reindeer Dish">
+    Obtain **Raw Reindeer** meat and cook it in a smoker (the Arolla Pine Smoker works well here). Combine the result into a **Cooked Reindeer Dish** and pick it up. This advancement's parent is `spyglass_at_reindeer`, so the spyglass step must come first.
+  </Step>
+
+  <Step title="Feed an Alpine Sheep">
+    Find an **Alpine Sheep** in a cold biome. Hold **Bread** and right-click the sheep to feed it. The trigger is `player_interacted_with_entity` with a bread item check. This unlocks the shearing step.
+  </Step>
+
+  <Step title="Shear an Alpine Sheep">
+    Hold **Shears** and right-click an Alpine Sheep. You will receive **Homespun Wool**, and the advancement fires on the interaction event. This is the final step in the animal branch.
+  </Step>
+</Steps>
+
+<Tip>Reindeer are easier to spot from a distance than on foot. Craft a Spyglass before heading into the Grove and scan slopes and clearings — the spyglass advancement requires you to be actively using it while a Reindeer is in your crosshair, so a clear line of sight from a hill works well.</Tip>

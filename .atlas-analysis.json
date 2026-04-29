@@ -1,0 +1,96 @@
+{
+  "projectType": "general",
+  "projectName": "Alpine Whispers",
+  "projectDescription": "A Minecraft 1.21.1 mod adding alpine-themed content including new wildlife, Arolla Pine furniture, stone blocks, winter decorations, and revitalized snowy biomes for both Fabric and NeoForge.",
+  "theme": "almond",
+  "primaryColor": "#e0b45f",
+  "lightColor": "#89540f",
+  "darkColor": "#e6dbc4",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "installation"
+            ]
+          },
+          {
+            "group": "Wildlife",
+            "pages": [
+              "wildlife/reindeer",
+              "wildlife/alpine-sheep"
+            ]
+          },
+          {
+            "group": "Blocks & Building",
+            "pages": [
+              "blocks/arolla-pine",
+              "blocks/alpine-gneiss",
+              "blocks/functional-blocks"
+            ]
+          },
+          {
+            "group": "Decorations & Items",
+            "pages": [
+              "decorations/winter-decor",
+              "decorations/food-and-items"
+            ]
+          },
+          {
+            "group": "World & Biomes",
+            "pages": [
+              "world/biomes",
+              "world/advancements"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Configuration",
+            "pages": [
+              "reference/configuration",
+              "reference/compatibility"
+            ]
+          },
+          {
+            "group": "Changelog",
+            "pages": [
+              "reference/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Rideable Reindeer that support two passengers simultaneously",
+    "Alpine Sheep with unique homespun wool and bread-on-a-stick riding mechanic",
+    "Full Arolla Pine wood set with furniture: chairs, tables, sofas, beds, cabinets, bathtub, wardrobe, and more",
+    "Alpine Gneiss stone family with frost/snow-covered variants",
+    "Winter decorations: icicles, wreaths, garlands, fairy lights, snow globe, tree baubles, star topper",
+    "New foods: raw/cooked reindeer and cooked reindeer dish",
+    "Winter Hat armor piece (rare)",
+    "Winter Magic music disc",
+    "Revitalized snowy biomes with hoarfrost grass, frozen dirt, and alpine flora",
+    "Dual mod-loader support for Fabric and NeoForge (Minecraft 1.21.1)"
+  ],
+  "publicApiSurface": [
+    "net.satisfy.alpinewhispers.core.registry.ObjectRegistry — all registered blocks and items",
+    "net.satisfy.alpinewhispers.core.registry.EntityTypeRegistry — Reindeer and Alpine Sheep entity types",
+    "net.satisfy.alpinewhispers.core.entity.ReindeerEntity — rideable reindeer (2 passengers, herd AI)",
+    "net.satisfy.alpinewhispers.core.entity.AlpineSheepEntity — shearable, rideable alpine sheep",
+    "net.satisfy.alpinewhispers.core.block.FrostyBlock / FrostyBlockInterface — snow-coverable blocks",
+    "net.satisfy.alpinewhispers.core.block.BathtubBlock / BathtubBlockEntity — functional bathtub",
+    "net.satisfy.alpinewhispers.core.block.FireplaceCorniceBlock — decorative fireplace insert accepting full blocks",
+    "net.satisfy.alpinewhispers.core.block.SmokeOvenBlock — arolla pine smoker (cooking block)",
+    "net.satisfy.alpinewhispers.core.registry.SoundEventRegistry — reindeer and winter_magic sounds",
+    "net.satisfy.alpinewhispers.core.world.feature — Arolla Pine tree grower and Rock Pile feature"
+  ]
+}

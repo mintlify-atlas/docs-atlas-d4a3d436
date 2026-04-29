@@ -1,0 +1,77 @@
+---
+title: "Reindeer: rideable alpine wildlife with herd AI"
+description: "Reindeer are tameable, rideable mobs that support two passengers, form herds, and inhabit snowy biomes in Alpine Whispers for Minecraft 1.21.1."
+---
+
+Reindeer are the flagship creature of Alpine Whispers. These large, tame-able ungulates roam snowy mountain biomes in small herds, can carry two riders simultaneously, and will defend themselves when threatened. Taming one opens up a fast and atmospheric way to traverse the alpine landscape.
+
+## Spawning
+
+Reindeer spawn naturally in snowy biomes, including the **Grove**, **Snowy Plains**, and **Snowy Slopes**. They appear in small groups and can often be spotted grazing or moving together across open snowfields.
+
+## Taming
+
+Reindeer are tamed by feeding them **Sweet Berries**. Hold Sweet Berries in your hand and approach slowly — the reindeer will be drawn toward you via a tempt behaviour before you can feed it. Continue feeding until hearts appear and the reindeer is tamed.
+
+<Note>
+Sweet Berries are also used for **breeding** tamed reindeer. Feed two tamed adults to put them in love mode and produce a calf.
+</Note>
+
+## Riding
+
+Once tamed and fully grown, a reindeer can be ridden without a saddle — it is considered "saddled" automatically when tamed and adult. Right-click an adult tamed reindeer (without sneaking) to mount it.
+
+**Two players can ride the same reindeer at once.** The first passenger sits toward the front; the second sits toward the back. The reindeer accepts a new passenger as long as fewer than two entities are already riding it.
+
+The rider in the front seat controls movement using standard WASD/look inputs.
+
+<Tip>
+Reindeer can carry two players — great for exploring snowy mountains together without splitting up.
+</Tip>
+
+## Herd behaviour
+
+Adult reindeer use a custom `ReindeerHerdGoal` that causes them to stay loosely grouped. An adult reindeer will move toward the nearest other adult reindeer it detects within **18 blocks**, stopping once it closes to within **4 blocks**. This goal is suppressed when a reindeer is being ridden or is still a baby, so mounted reindeer will not break formation to chase the herd.
+
+| Parameter | Value |
+|-----------|-------|
+| Detection radius | 18 blocks |
+| Minimum following distance | 4 blocks |
+
+## Combat & survival
+
+<Warning>
+Wild reindeer will retaliate if attacked. The `HurtByTargetGoal` is set to alert others, meaning nearby reindeer may join in defending an injured companion. Approach wild herds carefully.
+</Warning>
+
+Reindeer are wary of **Wolves** (flee at 14 blocks) and **Polar Bears** (flee at 12 blocks). When cornered or harmed, they fight back using `AnimationAttackGoal` — a melee attack that plays a full attack animation before dealing damage, with an attack delay of 21 ticks.
+
+- **Max Health:** 40 HP
+- **Attack Damage:** 7
+- **Attack Knockback:** 1.6
+
+## Movement on snow and ice
+
+Reindeer have adapted locomotion on alpine terrain:
+
+- **Snow, powder snow, and snow blocks:** movement speed is multiplied by **1.125** (a ~12.5% boost), making reindeer noticeably faster on their native ground.
+- **Ice, packed ice, frosted ice, and blue ice:** horizontal momentum is dampened to **60%** on each ground tick, causing the reindeer to slide and lose speed.
+
+This means reindeer are fastest on fresh snow and slowest when crossing ice sheets.
+
+## Drops
+
+- **Raw Reindeer** — dropped on death under normal circumstances.
+- **Cooked Reindeer** — dropped if the reindeer dies while on fire.
+
+Cooked Reindeer can also be crafted into a **Cooked Reindeer Dish** using the Arolla Pine Smoker.
+
+## Attributes
+
+| Attribute | Value |
+|-----------|-------|
+| Max Health | 40 HP |
+| Movement Speed | 0.18 |
+| Follow Range | 16 blocks |
+| Attack Damage | 7 |
+| Jump Strength | 0.5 |

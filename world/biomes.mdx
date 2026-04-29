@@ -1,0 +1,61 @@
+---
+title: "Alpine biomes: terrain, flora & world generation"
+description: "Alpine Whispers enriches Grove and Snowy biomes with hoarfrost grass, alpine flora, frozen dirt, rock piles, and the distinctive Arolla Pine tree."
+---
+
+Alpine Whispers does not register new biome IDs. Instead, it enriches the cold biomes that already exist in Minecraft, layering in new vegetation, terrain details, custom weather behaviour, and craftable materials so that snowy landscapes feel genuinely inhabited rather than empty.
+
+<Note>Alpine Whispers enhances existing biomes; it does not register entirely new biome IDs. All world-generation content spawns within vanilla Minecraft's cold and snowy biomes.</Note>
+
+## Target biomes
+
+Alpine Whispers content spawns across the following vanilla biomes:
+
+- **Grove** — richest for mod content; Arolla Pine trees, Reindeer herds, and alpine flora all appear here
+- **Snowy Plains** — hoarfrost grass, frozen dirt, and alpine flowers
+- **Snowy Slopes** — rock piles and scattered flora
+- **Frozen Peaks** area biomes — cold terrain detail including frozen dirt and icicles
+
+<Tip>Grove biomes are the richest for Alpine Whispers content — Arolla Pine trees, Reindeer herds, and alpine flora all appear here.</Tip>
+
+## New terrain features
+
+### Arolla Pine tree
+
+The Arolla Pine is the mod's signature tree, found in Grove biomes. It grows from the **Arolla Pine Sapling** and uses a custom `ArollaPineFoliagePlacer` that builds a layered, conical canopy. The placer works outward from the trunk apex using a fixed radius profile `[0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 2, 1]`, producing the dense, spire-like silhouette characteristic of real arolla (Swiss stone) pines.
+
+The sapling's `TreeGrower` references the `arolla_pine_mid` configured feature.
+
+**Arolla Pine Leaves** (`SnowyLeavesBlock`) carry a `SNOWY` block-state property:
+
+- Right-click with a **Snowball** to add snow cover — the snowball is consumed outside creative mode.
+- Right-click with an empty hand to remove snow, scattering snow-block particles.
+- Snow-covered leaves emit falling snowflake particles during the day, with intensity varying by time of day.
+
+### Rock piles
+
+`RockPileFeature` scatters small clusters of **Alpine Gneiss** rocks across the surface of alpine terrain. Each pile is generated as a randomised ellipsoid shape with configurable size, burial depth, and roughness, placed on any solid non-fluid surface. Corners of each pile are randomly carved away to break up the silhouette. The feature adds natural rocky ground detail without altering the terrain height significantly.
+
+### Flora
+
+| Block | Notes |
+|-------|-------|
+| **Snow Gentian** | Healing flower (`MobEffects.HEAL`); can be placed in a flower pot |
+| **Christmas Rose** | Healing flower (`MobEffects.HEAL`); can be placed in a flower pot |
+| **Hoarfrost Grass** | `SnowyGrassBlock`; emits snowflake particles in cold biomes (temperature ≤ 0.3) during morning and midday hours |
+| **Tall Hoarfrost Grass** | `SnowyDoublePlantBlock`; taller two-block variant of hoarfrost grass |
+| **Frozen Dirt** | A frozen variant of dirt; spawns in very cold areas and shares dirt's full-block properties |
+
+### Weather
+
+`GroveSnowWeather` activates client-side when the player is standing in a Grove biome during clear (non-raining) weather. It provides:
+
+- **Gentle snowflake particles** that drift down from open sky around the player.
+- **Avalanche particles** — as time in the Grove accumulates, intensity builds and snow slides appear on steep snowy slopes.
+- **Ambient sounds** — a quiet grove ambient sound plays every ~30 seconds; distant avalanche rumbles trigger once intensity passes a threshold.
+
+<Info>A config option is available (introduced in 1.0.1) for both Fabric and NeoForge that lets you remove the fog effect in Snowy Biomes if you find it too heavy.</Info>
+
+## Homespun Carpet & Wool
+
+**Homespun Wool** is obtained by shearing an **Alpine Sheep** — a passive mob that spawns in cold biomes. The wool can be crafted into **Homespun Carpet**, a dark, hand-woven carpet block suited to cozy alpine interiors. Neither block accepts standard dye, preserving the rustic undyed look.
